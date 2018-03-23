@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Générateur de Personalités</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  
+
+</head>
+<body>
+
+	<link rel="stylesheet" type="text/css" href="../css/progressBar.css">
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
+
+	<script src="../js/constructPersonalityFromFile.js"></script>
+	<script src="../js/constructHTMLFromPersonality.js"></script>
+	<script src="../js/gestionBouton.js"></script>
+	<script src="../js/readFiles.js"></script>
+	<script src="../js/requierments.js"></script>
+	<script src="../js/randomize.js"></script>
+	<script src="../js/saveCharacter.js"></script>
+	<h1>Générateur de personalité</h1>
+	<table style="width:100%" id="mainTable">
+		<tbody>
+			<td id="zone_pers">
+			</td>
+			<td id="gestion" style="width:20%">
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<input type="file" id="files" name="file" />
+								<button onclick="abortRead();">Cancel read</button>
+								<div id="progress_bar"><div class="percent">0%</div></div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" id="generate" value="Générer un personnage" onclick="randomizeAll();">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" id="save" value="Enregistrer ce personnage" onclick="saveCharacter();">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tbody>
+	</table>
+	<img id="mainImage" display='none';" src="../css/noIE.jpg" alt="The File APIs are not fully supported in this browser." height="100%" width="100%">
+
+</body>
+<footer>
+  <i>Version V 1.0 by Kalendas</i>
+</footer>
+<script type="text/javascript">
+	/*initialisation*/
+	checkNavigator();
+	var reader;
+	var fileContent;
+	var personnalite=[];
+  	var progress = document.querySelector('.percent');
+  	var DEBUT="DEBUT";
+    var DOMAINE="@";
+    var CARACTERE="#";
+    var ASPECT ="ASPECT";
+    var SEPARATEUR="\t";
+  	document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+</html>

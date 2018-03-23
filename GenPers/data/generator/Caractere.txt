@@ -1,0 +1,180 @@
+@	GENERAL
+
+#	Blabla
+1	Achievement	To overcome obstacles and succeed; to become the best
+1	Acquisition	To obtain possessions/wealth
+1	Balance/Peace	To bring all things into harmony and equilibrium
+1	Beneficence	To protect the helpless, heal the sick, feed the hungry, etc.
+1	Chaos		To disrupt, to cause confusion and discord
+1	Creation	To build or make new, such as art, culture, invention, design,etc.
+1	Destruction	To annihilate, exterminate, unmake, and bring to ruin
+1	Discovery	To uncover mysteries
+1	Adventure	To explore, and pioneer
+1	Education	To provide information, teach, enlighten, or train
+1	Enslavement	To force others into servitude
+1	Hedonism	To enjoy all things sensuous
+1	Liberation	To free the self and/or others from perceived captivity or enslavement
+1	Nobility/Honor	To exalt ideals such as generosity, honesty, bravery, and courtliness
+1	Order		To arrange, organize, and reduce chaos
+1	Play		To have fun, to enjoy life
+1	Power		To control and lead others
+1	Recognition	To gain approval, social status, or fame
+1	Service		To follow a person, government, order, religion, etc.
+1	Torment		To inflict pain and suffering, on others and/or the self
+1	Understanding	To seek knowledge or wisdom (spiritual, scientific, magical,etc)
+
+#	EMOTIONAL DISPOSITION	The general emotional set; the default mood
+1	Joyful
+1	Anxious
+1	Melancholy
+1	Curious
+1	Calm
+1	Angry
+1	Contemptuous
+1	Excited
+1	Apathetic
+1	Ashamed
+
+
+@	OUTLOOK	
+
+#	General worldview	
+1	Optimistic 
+1	idealistic
+1	confident
+1	trusting
+1	hopeful
+1	upbeat
+1	Pessimistic 
+1	cynical
+1	bleak
+1	distrustful
+1	foreboding
+1	resigned
+
+#	INTEGRITY	Basic values regarding work and social interactions
+1	Conscientious
+1	industrious
+1	honest
+1	responsible
+1	meticulous
+1	pragmatic
+1	Unscrupulous
+1	lazy
+1	deceitful
+1	unreliable
+1	manipulative
+1	slipshod
+1	impractical
+
+#	IMPULSIVENESS	Distractibility and steadiness
+1	Controlled
+1	deliberate
+1	focused
+1	steady
+1	thoughtful
+1	Spontaneous
+1	capricious
+1	flighty
+1	hyperactive
+1	rash
+
+#	BOLDNESS	Willingness to enter into battle or to face danger
+1	Intrepid
+1	daring
+1	reckless
+1	chivalrous
+1	Cautious
+1	timid
+1	paranoid
+1	vigilant
+
+#	FLEXIBILITY	Handling new situations, tough choices, and disagreement
+1	Flexible
+1	nonchalant
+1	tolerant
+1	forgiving
+1	open-minded
+1	adaptable
+1	Stubborn
+1	rigid
+1	tense
+1	relentless
+1	intractable
+1	narrow-minded
+
+#	AFFINITY	Emotional attitude towards other people
+1	Warm
+1	altruistic
+1	nurturing
+1	empathic
+1	supportive
+1	Cold
+1	self absorbed
+1	needy
+1	greedy
+1	stingy
+1	uncaring
+
+#	COMPORTMENT	General style of social interaction
+1	Agreeable
+1	courteous
+1	cultured
+1	modest
+1	charming
+1	humorous
+1	Discordant
+1	gruff
+1	critical
+1	arrogant
+1	crude
+1	defensive
+1	sanctimonious
+
+#	INTERACTIVITY	Degree to which your character interacts with others
+1	Engaging
+1	talkative
+1	listener
+1	entertaining
+1	touchy
+1	Reserved
+1	shy
+1	loner
+1	taciturn
+
+#	DISCLOSURE	Degree to which your character reveals personal information
+1	Candid
+1	open book
+1	unreserved
+1	frank
+1	Secretive
+1	closed
+1	mysterious
+1	evasive
+1	cryptic
+
+#	CONFORMITY	Basic relationship with cultural norms
+1	Conventional
+1	orthodox
+1	formal
+1	down-to-earth
+1	mainstream
+1	traditional
+1	Heterodox
+1	rebellious
+1	arty
+1	shocking
+1	freethinking
+1	exotic
+
+#	SENSE OF HUMOR
+1	Crude
+1	Pranks
+1	Dry
+1	Mean-spirited
+1	Slapstick
+1	Gleeful
+1	Jokey
+1	Surreal
+1	Cynical
+1	None
