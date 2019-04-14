@@ -52,7 +52,7 @@
       // NOTE: event.target point to FileReader
       fileContent = e.target.result;
       loadAndContructPersonality();
-      constructHTML();
+      buildTableHTML();
       progress.style.width = '100%';
       progress.textContent = '100%';
       setTimeout("document.getElementById('progress_bar').className='';", 2000);

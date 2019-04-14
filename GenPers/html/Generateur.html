@@ -36,6 +36,12 @@
 						</tr>
 						<tr>
 							<td>
+								<button id="gestionBouton" onclick="gestionBouton();">Passer en Mode Edition</button>
+								<button id="saveModif" disabled="disabled" onclick="">Enregistrer les modifications</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
 								<input type="button" id="generate" value="Générer un personnage" onclick="randomizeAll();">
 							</td>
 						</tr>
@@ -58,6 +64,7 @@
 <script type="text/javascript">
 	/*initialisation*/
 	checkNavigator();
+	var isEditMode=false;
 	var reader;
 	var fileContent;
 	var personnalite=[];
