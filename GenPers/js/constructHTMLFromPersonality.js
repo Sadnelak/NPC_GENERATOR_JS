@@ -10,7 +10,9 @@ var buildTableHTML=function(){
   // creating all cells
   for (var i = 0; i < tabDom.length; i++) {
     // creates a table row
+    var idRow="row"+i;
     var row = document.createElement("tr");
+    row.id=idRow;
  	var tdDomaine = createCell(tabDom[i],"domaine");
 
 
@@ -18,7 +20,7 @@ var buildTableHTML=function(){
     row.appendChild(tdDomaine);
     
     var cellCaracs = document.createElement("td");
-    cellCaracs.appendChild(buildTableauCarac(tabDom[i].caracteres));
+    cellCaracs.appendChild(buildTableauCarac(tabDom[i].caracteres,idRow));
  	row.appendChild(cellCaracs);
     // add the row to the end of the table body
     tblBody.appendChild(row);
@@ -65,7 +67,7 @@ var createCell=function(objet,classe){
 }
 
 
-var buildTableauCarac=function(caracteres){
+var buildTableauCarac=function(caracteres,idRow){
 	var tblCaracs = document.createElement("table");
     var tblCaracsBody = document.createElement("tbody");
     
@@ -73,11 +75,13 @@ var buildTableauCarac=function(caracteres){
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
+      var idCarac=idRow+"Carac"+j;
       var row = document.createElement("tr");
+      row.id=idCarac;
       var tdCarac =createCell(caracteres[j],"carac");
       
       var tdAspects =document.createElement("td");
-      var cellAspects = isEditMode==true ?  buildInputList(caracteres[j].aspects) : buildSelector(caracteres[j].aspects);
+      var cellAspects = isEditMode==true ?  buildInputList(caracteres[j].aspects,idCarac) : buildSelector(caracteres[j].aspects,idCarac);
       tdAspects.appendChild(cellAspects);
       
       row.appendChild(tdCarac);
@@ -89,8 +93,10 @@ var buildTableauCarac=function(caracteres){
     return tblCaracs;
 }
 
-var buildSelector=function(aspects){
+var buildSelector=function(aspects,idCarac){
+	var idAsp=idCarac+"Asp";
 	var selector = document.createElement("select");
+	selector.id=idAsp;
 	selector.classList.add("aspect");
 
 	var option0=document.createElement("option");
@@ -106,15 +112,61 @@ var buildSelector=function(aspects){
 	return selector;
 }
 
-var buildInputList=function(aspects){
+var buildInputList=function(aspects,idCarac){
 	var list = document.createElement("ul");
 	
 	for(var i =0; i<aspects.length;i++){
+		addAspect(i,list,aspects,idCarac);
+	}
+	var newItem=document.createElement("li");
+	var buttonAdd=document.createElement("button");
+	buttonAdd.innerText="+";
+	buttonAdd.onclick=function(){addAspect(null,list,this);};
+	newItem.appendChild(buttonAdd);
+	list.appendChild(newItem);
+	return list;	
+}
+
+var completeWithButtonAdd=function(element){
+
+}
+
+
+var removeItem=function(elementId){
+	var element=document.getElementById(elementId);
+	var ligne = element.parentNode;
+	var parent = ligne.parentNode;
+	parent.removeChild(ligne);
+
+}
+
+var addAspect=function(i,list,aspects,idCarac){
+		var liPlus=null;
+		if(i==null){
+			liPlus=aspects.parentNode;
+			i=list.childNodes.length;
+			aspects=[];
+			aspects[i]={nom:"",proba:1};
+			idCarac=list.id;
+
+		}
+		var idLi=idCarac+"Asp"+i;
+
 		var item=document.createElement("li");
-		list.appendChild(item);
+		item.id=idLi;
+		
+		if(liPlus==null){
+			list.appendChild(item);
+		}else{
+			list.replaceChild(item,liPlus);
+			list.appendChild(liPlus);
+		}
 		var buttonRemove=document.createElement("button");
-		buttonRemove.value="-";
-		buttonRemove.onclick="removeItem("+item+");";
+		buttonRemove.innerText="-";
+
+		var buttonId=idLi+"remove";
+		buttonRemove.id=buttonId;
+		buttonRemove.onclick=function(){removeItem(this.id);};
 		var input = document.createElement("input");
 		input.title="nom de l'aspect";
 		input.type="text";
@@ -130,28 +182,4 @@ var buildInputList=function(aspects){
 		item.appendChild(buttonRemove);
 		item.appendChild(input);
 		item.appendChild(proba);
-		
-	}
-	var newItem=document.createElement("li");
-	var buttonAdd=document.createElement("button");
-	buttonAdd.value="+";
-	buttonAdd.onclick=addAspect(list);
-	newItem.appendChild(buttonAdd);
-	list.appendChild(newItem);
-	return list;	
-}
-
-var completeWithButtonAdd=function(element){
-
-}
-
-
-var removeItem=function(element){
-	var parent = element.parentNode;
-	parent.removeChild(element);
-
-}
-
-var addAspect=function(element){
-
 }
